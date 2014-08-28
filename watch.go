@@ -12,7 +12,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/couchbaselabs/bleve"
+	"github.com/blevesearch/bleve"
 	"github.com/libgit2/git2go"
 	"gopkg.in/fsnotify.v1"
 )

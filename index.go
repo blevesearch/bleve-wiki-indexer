@@ -12,7 +12,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/couchbaselabs/bleve"
+	"github.com/blevesearch/bleve"
 	"github.com/libgit2/git2go"
 )
 

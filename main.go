@@ -15,7 +15,7 @@ import (
 	"path/filepath"
 	"regexp"
 
-	bleveHttp "github.com/couchbaselabs/bleve/http"
+	bleveHttp "github.com/blevesearch/bleve/http"
 )
 
 var dir = flag.String("dir", "", "directory to monitor and index")
