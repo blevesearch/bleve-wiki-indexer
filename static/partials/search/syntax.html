@@ -1,0 +1,15 @@
+<h1 class="page-header"><a href="/"><img class="logo" src="/static/img/bleve.png"/>bleve wiki search</a></h1>
+
+<form class="navbar-form searchbox" role="search">
+    <div class="input-group col-lg-12 col-lg-offset-1">
+        <input ng-model="syntax" type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+        <div class="input-group-btn">
+            <button class="btn btn-primary" type="submit" ng-click="searchSyntax()"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+    </div>
+    <span class="help-block col-lg-offset-1"></span>
+</form>
+<div ng-show="errorMessage" class="alert alert-danger" role="alert"> {{errorMessage}}
+</div>
+<div ng-show="results.hits.length < 1" ng-include src="'/static/partials/search/noresults.html'"/>
+<div ng-show="results.hits.length > 0" ng-include src="'/static/partials/search/results.html'"/>

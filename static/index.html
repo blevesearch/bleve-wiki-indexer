@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>Bleve Wiki Search</title>
+  <meta name="description" content="">
+  <!-- Bootstrap -->
+  <link href="/static/css/prism.css" rel="stylesheet"/>
+  <link href="/static/css/app.css" rel="stylesheet"/>
+  <link href="/static/css/bootstrap.css" rel="stylesheet"/>
+  <link href="/static/css/dashboard.css" rel="stylesheet"/>
+
+  
+   <link rel="shortcut icon" href="/static/favicon.ico" />
+</head>
+<body>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 main">
+          <div ng-view></div>
+        </div>
+      </div>
+
+      <div class="footer col-sm-4 col-sm-offset-5">
+        <p>Search powered by <a href="http://www.blevesearch.com">bleve</a> <img class="powered" src="/static/img/bleve.png" width="16" height="16"/></p>
+      </div>
+
+    </div>
+
+
+  <script src="/static/lib/moment.min.js"></script>
+  <script src="/static/lib/jquery/jquery-2.1.1.js"></script>
+  <script src="/static/lib/bootstrap/bootstrap.js"></script>
+  <script src="/static/lib/angular/angular.js"></script>
+  <script src="/static/lib/angular-route/angular-route.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/search.js"></script>
+</body>
+</html>
