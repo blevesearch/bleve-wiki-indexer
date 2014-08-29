@@ -7,7 +7,7 @@
     </div>
     <span class="help-block col-lg-offset-1"></span>
 </form>
-<div ng-show="errorMessage" class="alert alert-danger" role="alert"> {{errorMessage}}
+<div ng-show="errorMessage" class="alert alert-danger ng-cloak" role="alert"> {{errorMessage}}
 </div>
 <div ng-show="results.hits.length < 1" ng-include src="'/static/partials/search/noresults.html'"></div>
 <div ng-show="results.hits.length > 0" ng-include src="'/static/partials/search/results.html'"/></div>
