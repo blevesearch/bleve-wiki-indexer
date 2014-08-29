@@ -1,5 +1,3 @@
-<h1 class="page-header"><a href="/"><img class="logo" src="/static/img/bleve.png"/>bleve wiki search</a></h1>
-
 <form class="navbar-form searchbox" role="search">
     <div class="input-group col-lg-12 col-lg-offset-1">
         <input ng-model="syntax" type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
@@ -11,5 +9,9 @@
 </form>
 <div ng-show="errorMessage" class="alert alert-danger" role="alert"> {{errorMessage}}
 </div>
-<div ng-show="results.hits.length < 1" ng-include src="'/static/partials/search/noresults.html'"/>
-<div ng-show="results.hits.length > 0" ng-include src="'/static/partials/search/results.html'"/>
+<div ng-show="results.hits.length < 1" ng-include src="'/static/partials/search/noresults.html'"></div>
+<div ng-show="results.hits.length > 0" ng-include src="'/static/partials/search/results.html'"/></div>
+
+<div class="footer col-sm-4 col-sm-offset-5">
+<p>Search powered by <a href="http://www.blevesearch.com">bleve</a> <img class="powered" src="/static/img/bleve.png" width="16" height="16"/></p>
+</div>

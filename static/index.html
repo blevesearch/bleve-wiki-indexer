@@ -8,25 +8,57 @@
   <link href="/static/css/prism.css" rel="stylesheet"/>
   <link href="/static/css/app.css" rel="stylesheet"/>
   <link href="/static/css/bootstrap.css" rel="stylesheet"/>
-  <link href="/static/css/dashboard.css" rel="stylesheet"/>
 
   
    <link rel="shortcut icon" href="/static/favicon.ico" />
 </head>
 <body>
 
-    <div class="container-fluid">
+    <a href="https://github.com/blevesearch/bleve"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
+    <div class="container">
+
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a href="/"><img class="logo" src="/static/img/bleve.png"/></a>
+            <a class="navbar-brand" href="http://www.blevesearch.com/">bleve</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://www.blevesearch.com/docs.html">Documentation</a></li>
+              <li><a href="http://www.blevesearch.com/discuss.html">Discussion</a></li>
+              <li>
+                <form action="http://wikisearch.blevesearch.com/search/" class="navbar-form searchbox" role="search">
+                    <div class="input-group col-lg-12 col-lg-offset-1">
+                        <input type="text" class="form-control" placeholder="Search Wiki" name="q">
+                        <input type="hidden" name="p" value="1"/>
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2 main">
           <div ng-view></div>
         </div>
       </div>
 
-      <div class="footer col-sm-4 col-sm-offset-5">
-        <p>Search powered by <a href="http://www.blevesearch.com">bleve</a> <img class="powered" src="/static/img/bleve.png" width="16" height="16"/></p>
+
+
+      <div class="footer">
+        <p>&copy; Couchbase 2014</p>
       </div>
 
-    </div>
+    </div> <!-- /container -->
 
 
   <script src="/static/lib/moment.min.js"></script>

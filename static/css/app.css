@@ -4,9 +4,13 @@
 }
 
 .logo {
-	margin-top: -10px;
+  float: left;
+  margin-top: -7px;
   margin-right: 10px;
-	vertical-align: top
+}
+
+.navbar {
+  height: 50px;
 }
 
 .debug {
@@ -46,4 +50,10 @@
 
 h1.page-header a {
   color: black;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
