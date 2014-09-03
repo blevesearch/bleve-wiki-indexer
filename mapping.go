@@ -16,56 +16,24 @@ const textFieldAnalyzer = "en"
 
 func buildIndexMapping() *bleve.IndexMapping {
 
-	nameMapping := bleve.NewDocumentMapping().
-		AddFieldMapping(
-		bleve.NewFieldMapping(
-			"", "text", textFieldAnalyzer,
-			true, true, true, true))
+	enTextFieldMapping := bleve.NewTextFieldMapping()
+	enTextFieldMapping.Analyzer = textFieldAnalyzer
 
-	bodyMapping := bleve.NewDocumentMapping().
-		AddFieldMapping(
-		bleve.NewFieldMapping(
-			"", "text", textFieldAnalyzer,
-			true, true, true, true))
+	storeFieldOnlyMapping := bleve.NewTextFieldMapping()
+	storeFieldOnlyMapping.Index = false
+	storeFieldOnlyMapping.IncludeTermVectors = false
+	storeFieldOnlyMapping.IncludeInAll = false
 
-	modifiedByMapping := bleve.NewDocumentMapping().
-		AddFieldMapping(
-		bleve.NewFieldMapping(
-			"", "text", textFieldAnalyzer,
-			true, true, true, true))
+	dateTimeMapping := bleve.NewDateTimeFieldMapping()
 
-	modifiedByNameMapping := bleve.NewDocumentMapping().
-		AddFieldMapping(
-		bleve.NewFieldMapping(
-			"", "text", textFieldAnalyzer,
-			true, true, true, true))
-
-	modifiedByEmailMapping := bleve.NewDocumentMapping().
-		AddFieldMapping(
-		bleve.NewFieldMapping(
-			"", "text", textFieldAnalyzer,
-			true, true, true, true))
-
-	modifiedByAvatarMapping := bleve.NewDocumentMapping().
-		AddFieldMapping(
-		bleve.NewFieldMapping(
-			"", "text", textFieldAnalyzer,
-			true, false, false, false))
-
-	modifiedMapping := bleve.NewDocumentMapping().
-		AddFieldMapping(
-		bleve.NewFieldMapping(
-			"", "datetime", textFieldAnalyzer,
-			true, true, true, true))
-
-	wikiMapping := bleve.NewDocumentMapping().
-		AddSubDocumentMapping("name", nameMapping).
-		AddSubDocumentMapping("body", bodyMapping).
-		AddSubDocumentMapping("modified_by", modifiedByMapping).
-		AddSubDocumentMapping("modified_by_name", modifiedByNameMapping).
-		AddSubDocumentMapping("modified_by_email", modifiedByEmailMapping).
-		AddSubDocumentMapping("modified_by_avatar", modifiedByAvatarMapping).
-		AddSubDocumentMapping("modified", modifiedMapping)
+	wikiMapping := bleve.NewDocumentMapping()
+	wikiMapping.AddFieldMappingsAt("name", enTextFieldMapping)
+	wikiMapping.AddFieldMappingsAt("body", enTextFieldMapping)
+	wikiMapping.AddFieldMappingsAt("modified_by", enTextFieldMapping)
+	wikiMapping.AddFieldMappingsAt("modified_by_name", enTextFieldMapping)
+	wikiMapping.AddFieldMappingsAt("modified_by_email", enTextFieldMapping)
+	wikiMapping.AddFieldMappingsAt("modified_by_avatar", storeFieldOnlyMapping)
+	wikiMapping.AddFieldMappingsAt("modified", dateTimeMapping)
 
 	indexMapping := bleve.NewIndexMapping().
 		AddDocumentMapping("wiki", wikiMapping)
