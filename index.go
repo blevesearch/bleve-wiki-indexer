@@ -18,7 +18,7 @@ import (
 
 func openIndex(path string) bleve.Index {
 	index, err := bleve.Open(path)
-	if err == bleve.ERROR_INDEX_PATH_DOES_NOT_EXIST {
+	if err == bleve.ErrorIndexPathDoesNotExist {
 		log.Printf("Creating new index...")
 		// create a mapping
 		indexMapping := buildIndexMapping()

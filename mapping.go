@@ -68,8 +68,9 @@ func buildIndexMapping() *bleve.IndexMapping {
 		AddSubDocumentMapping("modified", modifiedMapping)
 
 	indexMapping := bleve.NewIndexMapping().
-		AddDocumentMapping("wiki", wikiMapping).
-		SetDefaultAnalyzer(textFieldAnalyzer)
+		AddDocumentMapping("wiki", wikiMapping)
+
+	indexMapping.DefaultAnalyzer = textFieldAnalyzer
 
 	return indexMapping
 }
