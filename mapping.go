@@ -35,8 +35,8 @@ func buildIndexMapping() *bleve.IndexMapping {
 	wikiMapping.AddFieldMappingsAt("modified_by_avatar", storeFieldOnlyMapping)
 	wikiMapping.AddFieldMappingsAt("modified", dateTimeMapping)
 
-	indexMapping := bleve.NewIndexMapping().
-		AddDocumentMapping("wiki", wikiMapping)
+	indexMapping := bleve.NewIndexMapping()
+	indexMapping.AddDocumentMapping("wiki", wikiMapping)
 
 	indexMapping.DefaultAnalyzer = textFieldAnalyzer
 
