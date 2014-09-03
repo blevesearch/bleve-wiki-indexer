@@ -80,11 +80,11 @@ function SearchCtrl($scope, $http, $routeParams, $log, $sce, $location) {
 
         // now see if we have too many pages
         if ($scope.validPages.length > $scope.maxPagesToShow) {
-            numPagesToRemove = $scope.validPages.length - maxPagesToShow;
+            numPagesToRemove = $scope.validPages.length - $scope.maxPagesToShow;
             frontPagesToRemove = backPagesToRemove = 0;
             while (numPagesToRemove - frontPagesToRemove - backPagesToRemove > 0) {
-                numPagesBefore = currentPage - 1 - frontPagesToRemove;
-                numPagesAfter = $scope.validPages.length - currentPage - backPagesToRemove;
+                numPagesBefore = $scope.page - 1 - frontPagesToRemove;
+                numPagesAfter = $scope.validPages.length - $scope.page - backPagesToRemove;
                 if (numPagesAfter > numPagesBefore) {
                     backPagesToRemove++;
                 } else {
