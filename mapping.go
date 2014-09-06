@@ -12,7 +12,7 @@ import (
 	"github.com/blevesearch/bleve"
 )
 
-const textFieldAnalyzer = "en"
+var textFieldAnalyzer = "standard"
 
 func buildIndexMapping() *bleve.IndexMapping {
 
