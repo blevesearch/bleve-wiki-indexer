@@ -33,13 +33,21 @@ Acquire the source to the wiki you want to index.
 
 Run the bleve-wiki-indexer.
 
+        $ cd $GOPATH/src/github.com/blevesearch/bleve-wiki-indexer
         $ bleve-wiki-indexer -dir /path/to/bleve.wiki
 
+Running from the bleve-wiki-indexer source directory enures the static content is found by default.  If you want to run it from somewhere else, use the `-static` flag to point to the static content.
 This will store the index in a directory `wiki.bleve` by default, but can be changed with command-line options.
 
 The program will run continuously, monitoring for changes in the /path/to/bleve.wiki.  If you update the live wiki, then in another terminal do a `git pull` the bleve-wiki-indexer should see the changes and begin indexing them shortly.
 
-The program exposes the standard bleve.http.SearchHandler at `:8099/api/search`.
+The program exposes a web UI at:
+
+        http://localhost:8099/
+
+It also exposes the standard bleve.http.SearchHandler at:
+
+        http://localhost:8099/api/search
 
 ## Status
 
