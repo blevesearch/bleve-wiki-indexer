@@ -19,7 +19,7 @@ The first step is get a happy installation of [git2go](https://github.com/libgit
         $ git submodule update --init
         $ make install
 
-Next, you need a build of bleve supporting the full build tags.
+Next, get the bleve-wiki-indexer.
 
         $ go get github.com/blevesearch/bleve-wiki-indexer
 
