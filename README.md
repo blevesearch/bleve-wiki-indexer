@@ -10,7 +10,7 @@ The application exposes a search interface on port 8099.
 
 ## Building
 
-Building this can be a built challenging.
+Building this can be a bit challenging.
 
 The first step is get a happy installation of [git2go](https://github.com/libgit2/git2go).
 
