@@ -23,7 +23,7 @@ Next, you need a build of bleve supporting the full build tags.
 
         $ go get github.com/blevesearch/bleve-wiki-indexer
 
-NOTE: the production version is built with `-tags full` build tag.  This enables the leveldb storage engine, and the english text analyzer.  If you have problems building bleve with that build tag, please raise issues in the [bleve project](github.com/blevesearch/bleve).
+NOTE: the production version is built with `-tags full` build tag.  This enables the leveldb storage engine, and the english text analyzer.  If you have problems building bleve with that build tag, please raise issues in the [bleve project](https://github.com/blevesearch/bleve).
 
 ## Running
 
