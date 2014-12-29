@@ -5,7 +5,11 @@ go:
 
 script:
   - go get golang.org/x/tools/cmd/vet
-  - go get github.com/mattn/goveralls
+  - go get -d github.com/libgit2/git2go
+  - cd $GOPATH/src/github.com/libgit2/git2go
+  - git submodule update --init
+  - make install
+  - cd $GOPATH/src/github.com/blevesearch/bleve-wiki-indexer
   - go build
   - go vet
 
