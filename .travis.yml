@@ -8,6 +8,7 @@ before_install:
   - cd $HOME/gopath/src/github.com/libgit2/git2go
   - git submodule update --init
   - make install
+  - cd -
 
 script:
   - go get golang.org/x/tools/cmd/vet
