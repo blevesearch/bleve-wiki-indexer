@@ -51,4 +51,4 @@ It also exposes the standard bleve.http.SearchHandler at:
 
 ## Status
 
-[![Build Status](https://drone.io/github.com/blevesearch/bleve-wiki-indexer/status.png)](https://drone.io/github.com/blevesearch/bleve-wiki-indexer/latest)
+[![Build Status](https://travis-ci.org/blevesearch/bleve-wiki-indexer.svg?branch=master)](https://travis-ci.org/blevesearch/bleve-wiki-indexer)
