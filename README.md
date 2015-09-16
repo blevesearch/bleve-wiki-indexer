@@ -1,3 +1,7 @@
+# RETIRED
+
+This bleve example appplication has been retired.  It will be left in place for the time being, but is not longer updated to work with the current codebase.
+
 ## bleve-wiki-indexer
 
 [Search the bleve wiki](http://wikisearch.blevesearch.com/)
